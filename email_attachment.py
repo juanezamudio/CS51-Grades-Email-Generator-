@@ -34,7 +34,7 @@ try:
 	# login with user input if you are not comfortable storing
 	# your password in plaintext
 	#
-	# Fill in the tuple method below (email address, password)
+	# Fill in the parameters of method below with (email address, password)
 	s.login('','')
 	s.set_debuglevel(1)
 except IOError:
@@ -96,13 +96,15 @@ If you have any questions please let us know!
 Your CS51 TAs"""
 
 # initialize your sending address and create empty lists
-sender = 'csgrades.pomona@gmail.com'
+# add email address in sender assignment
+sender = ''
 recipients = []
 names = []
 
 # As it stands, the script takes a plaintext file of the format
 # "examplemail@example.com:John Doe" per line
-mailTxt = open("cs51recipients.txt", 'r')
+# Add the name of the text file in the first parameter of open method
+mailTxt = open("", 'r')
 
 # load recipients from text file into a list (recipients), strip the \n
 # from the strings
@@ -155,7 +157,7 @@ for k, items in zip (range(len(recipients)), show):
 		print str(e) + "error: logging in and continuing loop with next address..."
 		s = smtplib.SMTP_SSL('smtp.gmail.com',465)
 		s.ehlo()
-		s.login(#email address as before, #password as before)
+		s.login(#email address as before, password as before)
 		s.set_debuglevel(1)
 		continue
 
