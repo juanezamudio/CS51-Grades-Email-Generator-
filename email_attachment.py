@@ -155,7 +155,7 @@ for k, items in zip (range(len(recipients)), show):
 		print str(e) + "error: logging in and continuing loop with next address..."
 		s = smtplib.SMTP_SSL('smtp.gmail.com',465)
 		s.ehlo()
-		s.login('csgrades.pomona@gmail.com','pcscience')
+		s.login(#email address as before, #password as before)
 		s.set_debuglevel(1)
 		continue
 
