@@ -34,8 +34,8 @@ try:
 	# login with user input if you are not comfortable storing
 	# your password in plaintext
 	#
-	# Fill in the tuple method below (email address, password)
-	s.login('csgrades.pomona@gmail.com','pcscience')
+	# Fill in the parameters of method below with (email address, password)
+	s.login('','')
 	s.set_debuglevel(1)
 except IOError:
 	print IOError
@@ -55,24 +55,24 @@ except IOError:
 #
 
 labNames = ["Lab 01", #[0]
-			"Lab 02",
-			"Lab 03",
-			"Lab 04",
-			"Lab 05",
-			"Lab 06", #[5]
-			"Lab 07",
-			"Lab 08",
-			"Lab 09",
-			"Lab 10",
-			"Lab 11", #[10]
-			"Lab 12",
-			"Test Program 1",
-			"Test Program 2"] #[13]
+	    "Lab 02",
+	    "Lab 03",
+	    "Lab 04",
+	    "Lab 05",
+	    "Lab 06", #[5]
+	    "Lab 07",
+	    "Lab 08",
+	    "Lab 09",
+	    "Lab 10",
+	    "Lab 11", #[10]
+	    "Lab 12",
+	    "Test Program 1",
+	    "Test Program 2"] #[13]
 
 # {0} - Different message subjects"
 variation0 = ["CS51: " + labNames[0] + " Grade",
-			  "CS51: Missing " + labNames[0] + " Submission",
-			  "CS51: Improper " + labNames[0] + " Submission."]
+	      "CS51: Missing " + labNames[0] + " Submission",
+	      "CS51: Improper " + labNames[0] + " Submission."]
 
 # {1} Different salutations.
 variation1 = ["Hello", "Good evening", "Good morning"]
@@ -99,13 +99,15 @@ If there is a reason for the missing lab submission, please also let us know so 
 Your CS51 TAs"""
 
 # initialize your sending address and create empty lists
-sender = 'csgrades.pomona@gmail.com'
+# Enter email address in sender assignment
+sender = ''
 recipients = []
 names = []
 
 # As it stands, the script takes a plaintext file of the format
 # "examplemail@example.com:John Doe" per line
-mailTxt = open("cs51recipients.txt", 'r')
+# Enter text file in first part of method parameter
+mailTxt = open("", 'r')
 
 # load recipients from text file into a list (recipients), strip the \n
 # from the strings
@@ -141,7 +143,7 @@ for k in range(len(recipients)):
 		print str(e) + "error: logging in and continuing loop with next address..."
 		s = smtplib.SMTP_SSL('smtp.gmail.com',465)
 		s.ehlo()
-		s.login('csgrades.pomona@gmail.com','pcscience')
+		s.login(#email address as before, password as before)
 		s.set_debuglevel(1)
 		continue
 
